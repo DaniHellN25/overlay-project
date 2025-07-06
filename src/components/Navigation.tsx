@@ -28,7 +28,7 @@ const Navigation: React.FC = () => {
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors duration-200 ${
                 isActive('/config')
                   ? 'bg-blue-800 text-white'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-green-800'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-purple-800 hover:text-white dark:hover:bg-purple-800'
               }`}
               aria-current={isActive('/config') ? 'page' : undefined}
             >
@@ -40,8 +40,8 @@ const Navigation: React.FC = () => {
               to="/preview"
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors duration-200 ${
                 isActive('/preview')
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                  ? 'bg-blue-800 text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-green-900 hover:text-white dark:hover:bg-purple-900'
               }`}
               aria-current={isActive('/preview') ? 'page' : undefined}
             >
