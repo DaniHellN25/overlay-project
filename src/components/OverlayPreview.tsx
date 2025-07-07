@@ -80,11 +80,11 @@ const OverlayPreview: React.FC<OverlayPreviewProps> = ({
       {/* Background pattern to simulate broadcast */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 opacity-50" />
       
-      <aside className={getPositionClasses()}>
+      <aside className={getPositionClasses() + ' md:max-md:w-dvw px-4'}>
         <article className={`
           bg-black bg-opacity-80 backdrop-blur-sm rounded-lg shadow-2xl
           ${isVertical ? 'flex flex-col items-center px-4 py-6' : 'flex items-center px-6 py-4'}
-          transition-all duration-300 ease-in-out hover:bg-opacity-90
+          transition-all duration-300 ease-in-out hover:bg-opacity-90 flex-wrap gap-4
         `}>
           {/* Header with Game Info */}
           <header className={`${isVertical ? 'mb-4' : 'mr-6'} text-center`}>
@@ -232,7 +232,7 @@ const OverlayPreview: React.FC<OverlayPreviewProps> = ({
 
       {/* Fullscreen mode indicator */}
       {isFullscreen && (
-        <aside className="absolute top-4 right-4 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
+        <aside className="absolute top-4 right-4 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded z-20">
           {t('preview.fullscreen')}
           {config.useRealData && (
             <div className="mt-1 text-purple-400">
