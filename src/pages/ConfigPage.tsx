@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Settings, Save, RotateCcw, Eye, Type, MapPin, ToggleLeft, ToggleRight } from 'lucide-react';
@@ -7,14 +7,17 @@ import TeamForm from '../components/TeamForm';
 import OverlayPreview from '../components/OverlayPreview';
 import GameDataControls from '../components/GameDataControls';
 import DataSourceToggle from '../components/DataSourceToggle';
+import AlertSuccess  from '../components/AlertSuccess'; // Adjust the path as needed
 
 const ConfigPage: React.FC = () => {
+  const [showAlert, setShowAlert] = useState(false);
   const { t } = useTranslation();
   const { config, matchData, updateConfig, updateTeam, resetConfig, saveConfig } = useOverlayStore();
 
   const handleSave = () => {
     saveConfig();
-    // You could add a toast notification here
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 2000); 
   };
 
   const handleReset = () => {
@@ -26,14 +29,14 @@ const ConfigPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 py-8">
       <header className="mb-8">
-        <div className="flex items-center justify-between flex-wrap">
+        <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center space-x-3">
             <Settings className="text-blue-600 dark:text-blue-400" size={32} />
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
               {t('config.title')}
             </h1>
           </div>
-          <nav className="flex items-center space-x-4 flex-wrap ">
+          <nav className="flex items-center space-x-0 flex-wrap gap-2">
             <button
               onClick={handleReset}
               className="flex items-center space-x-2 px-4 py-2 bg-gray-600 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 mb-2"
@@ -41,13 +44,16 @@ const ConfigPage: React.FC = () => {
               <RotateCcw size={20} />
               <strong>{t('actions.reset')}</strong>
             </button>
-            <button
-              onClick={handleSave}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 mb-2"
-            >
-              <Save size={20} />
-              <strong>{t('actions.save')}</strong>
-            </button>
+            <div className='relative'>
+              <button
+                onClick={handleSave}
+                className="flex items-center space-x-2 px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 mb-2"
+              >
+                <Save size={20} />
+                <strong>{t('actions.save')}</strong>
+              </button>
+              {showAlert && <AlertSuccess/>}
+            </div>
             <Link
               to="/preview"
               className="flex items-center space-x-2 px-4 py-2 bg-green-600 dark:bg-green-700 text-white rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 mb-2"
