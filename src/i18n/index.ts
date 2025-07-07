@@ -103,8 +103,10 @@ const resources = {
       'a11y.switchToDarkMode': 'Switch to dark mode',
       'a11y.switchToLightMode': 'Switch to light mode',
       'a11y.darkModeEnabled': 'Dark mode enabled',
-      'a11y.lightModeEnabled': 'Light mode enabled'
-    }
+      'a11y.lightModeEnabled': 'Light mode enabled',
+      //Alerts
+      'alert.success': 'Configuration saved'
+    },
   },
   es: {
     translation: {
@@ -207,7 +209,9 @@ const resources = {
       'a11y.switchToDarkMode': 'Cambiar a modo oscuro',
       'a11y.switchToLightMode': 'Cambiar a modo claro',
       'a11y.darkModeEnabled': 'Modo oscuro activado',
-      'a11y.lightModeEnabled': 'Modo claro activado'
+      'a11y.lightModeEnabled': 'Modo claro activado',
+            //Alerts
+      'alert.success': 'Configuración guardada'
     }
   }
 };

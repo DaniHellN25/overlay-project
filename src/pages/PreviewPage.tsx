@@ -11,12 +11,12 @@ const PreviewPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-white shadow-sm border-b dark:bg-gray-800" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
               <Eye className="text-blue-600" size={32} />
-              <h1 className="text-xl font-bold text-gray-900">
+              <h1 className="text-xl font-bold text-gray-900 dark:text-white">
                 {t('preview.title')}
               </h1>
             </div>
@@ -33,7 +33,7 @@ const PreviewPage: React.FC = () => {
         </div>
       </header>
 
-      <main className="p-8">
+      <main className="p-8 dark:bg-gray-900 bg-gray-100">
         <div className="max-w-7xl mx-auto">
           <article className="bg-white rounded-lg shadow-lg overflow-hidden">
             <OverlayPreview config={config} matchData={matchData} isFullscreen={true} />
