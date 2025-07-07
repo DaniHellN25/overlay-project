@@ -336,8 +336,7 @@ export class RealDataService {
         'elimination': 'elimination',
         'ctf': 'capture',
         'deathmatch': 'deathmatch',
-        'battle_royale': 'battle-royale',
-        'br': 'battle-royale'
+        'battleRoyale': 'battle royale',
       };
       return modeMap[apiMode.toLowerCase()] || 'elimination';
     };

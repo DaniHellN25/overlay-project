@@ -16,8 +16,8 @@ export interface MatchData {
   currentRound: number;
   totalRounds: number;
   timeRemaining: string;
-  gameMode: 'elimination' | 'capture' | 'deathmatch' | 'battleroyale';
-  status: 'live' | 'paused' | 'ended';
+  gameMode: 'elimination' | 'capture' | 'deathmatch' | 'battle royale';
+  status: 'live' | 'paused' | 'ended' | 'scheduled';
   teams: {
     team1: GameData;
     team2: GameData;
