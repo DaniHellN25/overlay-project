@@ -98,10 +98,10 @@ export class GameDataSimulator {
         return kills * 50;
       case 'deathmatch':
         return kills * 10;
-      case 'battle-royale':
+      case 'battleroyale':
         return kills * 25;
       default:
-        return kills * 10;
+        return kills * 12;
     }
   }
 

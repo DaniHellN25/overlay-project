@@ -144,7 +144,7 @@ const GameDataControls: React.FC = () => {
             <option value="elimination">{t('gameData.modes.elimination')}</option>
             <option value="capture">{t('gameData.modes.capture')}</option>
             <option value="deathmatch">{t('gameData.modes.deathmatch')}</option>
-            <option value="battleRoyale">{t('gameData.modes.battleRoyale')}</option>
+            <option value="battleroyale">{t('gameData.modes.battleRoyale')}</option>
           </select>
         </fieldset>
       </section>

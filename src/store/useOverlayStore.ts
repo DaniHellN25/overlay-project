@@ -6,18 +6,18 @@ import { RealDataService } from '../services/realDataService';
 
 const defaultConfig: OverlayConfig = {
   headerText: 'Live Now',
-  position: 'top',
+  position: 'left',
   teams: {
     team1: {
       id: 'team1',
-      name: 'Team Alpha-Live',
+      name: 'Team Alpha',
       logo: '',
-      primaryColor: '#3B82F6',
+      primaryColor: '#1b3764',
       secondaryColor: '#1E40AF'
     },
     team2: {
       id: 'team2',
-      name: 'Team Beta-Live',
+      name: 'Team Beta',
       logo: '',
       primaryColor: '#EF4444',
       secondaryColor: '#DC2626'
