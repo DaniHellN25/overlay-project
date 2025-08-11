@@ -184,5 +184,4 @@ This project is licensed under the MIT License.
 ## 🙏 Acknowledgments
 
 - Icons by [Lucide](https://lucide.dev/)
-- Color palette inspired by modern esports brands
 - Accessibility guidelines from WCAG 2.1
